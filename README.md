@@ -10,11 +10,12 @@ dart pub global activate fvm #-> fvmのインストール
 fvm --version #->fvmのバージョンが表示さればインストール成功
 ```
 
+
+以下のコマンドをプロジェクトのディレクトリ内で実行すればプロジェクト指定バージョンのFlutter SDKが適応されます。
+
 ```
 fvm install
 ```
-
-上記のコマンドを実行すればプロジェクト指定バージョンのFlutter SDKが適応されます。
 
 SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定されています。
 
