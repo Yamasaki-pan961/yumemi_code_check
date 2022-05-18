@@ -23,6 +23,9 @@ fvm install
 
 SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定されています。
 
+## 参考リポジトリー
+https://github.com/wasabeef/flutter-architecture-blueprints
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
