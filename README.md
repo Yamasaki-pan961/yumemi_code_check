@@ -1,6 +1,22 @@
 # yumemi_code_check
 
-A new Flutter project.
+## 環境設定
+
+本プロジェクトでは`fvm: Flutter Version Management`を使用してSDKのバージョンを管理しています。
+
+インストール方法
+```bash
+dart pub global activate fvm #-> fvmのインストール
+fvm --version #->fvmのバージョンが表示さればインストール成功
+```
+
+```
+fvm install
+```
+
+上記のコマンドを実行すればプロジェクト指定バージョンのFlutter SDKが適応されます。
+
+SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定されています。
 
 ## Getting Started
 
