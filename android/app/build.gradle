@@ -21,12 +21,33 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def dartEnvironmentVariables = project
+            .property('dart-defines')
+            .split(',')
+            .collectEntries {
+                new String(it.decodeBase64(), 'UTF-8')
+                    .split(',')
+                    .collectEntries {
+                        def pair = it.split('=')
+                        [(pair.first()): pair.last()]
+                    }
+            }
+
+task copyIcons(type: Copy) {
+    from "src/${dartEnvironmentVariables.FLAVOR}/res"
+    into 'src/main/res'
+}
+
+tasks.whenTaskAdded {
+    it.dependsOn copyIcons
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -44,10 +65,22 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.yumemi_code_check"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        if(dartEnvironmentVariables.FLAVOR == 'dev') {
+            applicationIdSuffix ".dev"
+            manifestPlaceholders += [appNamePrefix:"dev."]
+        } else if(dartEnvironmentVariables.FLAVOR == 'stg') {
+            applicationIdSuffix ".stg"
+            manifestPlaceholders += [appNamePrefix:"stg."]
+        } else if(dartEnvironmentVariables.FLAVOR == 'prd') {
+            applicationIdSuffix ""
+            manifestPlaceholders += [appNamePrefix:""]
+        } else {
+            throw new GradleException("unknown flavor" + dartEnvironmentVariables.FLAVOR + "has passed")
+        }
     }
 
     buildTypes {
