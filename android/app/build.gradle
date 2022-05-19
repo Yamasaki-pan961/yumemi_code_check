@@ -33,6 +33,15 @@ def dartEnvironmentVariables = project
                     }
             }
 
+task copyIcons(type: Copy) {
+    from "src/${dartEnvironmentVariables.FLAVOR}/res"
+    into 'src/main/res'
+}
+
+tasks.whenTaskAdded {
+    it.dependsOn copyIcons
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
