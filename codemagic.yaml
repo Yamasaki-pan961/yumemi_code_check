@@ -40,11 +40,11 @@ workflows:
         echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
       - flutter packages pub get
       - flutter analyze
-      - flutter drive --target=test_driver/main.dart
+      # - flutter drive --target=test_driver/main.dart
       - flutter test
-      - flutter build apk --release
+      - flutter build apk --release --dart-define=FLAVOR=prd
       - find . -name "Podfile" -execdir pod install \;
-      - flutter build ios --release --no-codesign
+      - flutter build ios --release --no-codesign --dart-define=FLAVOR=prd
     artifacts:
       - build/**/outputs/apk/**/*.apk
       - build/**/outputs/bundle/**/*.aab
