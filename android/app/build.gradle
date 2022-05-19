@@ -21,6 +21,18 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def dartEnvironmentVariables = project
+            .property('dart-defines')
+            .split(',')
+            .collectEntries {
+                new String(it.decodeBase64(), 'UTF-8')
+                    .split(',')
+                    .collectEntries {
+                        def pair = it.split('=')
+                        [(pair.first()): pair.last()]
+                    }
+            }
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
