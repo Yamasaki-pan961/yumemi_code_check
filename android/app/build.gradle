@@ -71,10 +71,13 @@ android {
         versionName flutterVersionName
         if(dartEnvironmentVariables.FLAVOR == 'dev') {
             applicationIdSuffix ".dev"
+            manifestPlaceholders += [appNamePrefix:"dev."]
         } else if(dartEnvironmentVariables.FLAVOR == 'stg') {
             applicationIdSuffix ".stg"
+            manifestPlaceholders += [appNamePrefix:"stg."]
         } else if(dartEnvironmentVariables.FLAVOR == 'prd') {
             applicationIdSuffix ""
+            manifestPlaceholders += [appNamePrefix:""]
         } else {
             throw new GradleException("unknown flavor" + dartEnvironmentVariables.FLAVOR + "has passed")
         }
