@@ -29,7 +29,6 @@
 - Flutter 2.10.5
 - Dart 2.16.2
 - MinimumOSVersion = 9.0
-- Flutter SDK依存
-  - compileSdkVersion = 31
-  - minSdkVersion = 16
-  - targetSdkVersion = 31
+- compileSdkVersion = 31
+- minSdkVersion = 16
+- targetSdkVersion = 31
