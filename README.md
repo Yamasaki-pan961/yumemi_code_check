@@ -23,6 +23,18 @@ fvm install
 
 SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定されています。
 
+## Flavor
+このプロジェクトでは`dev`,`stg`,`prd`のFlavorがあります。
+
+### dev
+- BuildMode: debug
+- Repository: 
+### stg
+- BuildMode: profile
+- Repository:
+### prd
+- BuildMode: release
+- Repository:
 ## 参考リポジトリー
 https://github.com/wasabeef/flutter-architecture-blueprints
 
