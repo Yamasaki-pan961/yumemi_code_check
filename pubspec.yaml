@@ -17,7 +17,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.9.2
+  
+  #Pub.devのパッケージがうまく動かないのでGitHubから得る 
+  flutter_launcher_icons:
+    git:
+      url: https://github.com/Davenchy/flutter_launcher_icons.git
+      ref: fixMinSdkParseFlutter2.8
 
   flutter_lints: ^1.0.0
 
