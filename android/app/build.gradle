@@ -69,6 +69,15 @@ android {
         targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        if(dartEnvironmentVariables.FLAVOR == 'dev') {
+            applicationIdSuffix ".dev"
+        } else if(dartEnvironmentVariables.FLAVOR == 'stg') {
+            applicationIdSuffix ".stg"
+        } else if(dartEnvironmentVariables.FLAVOR == 'prd') {
+            applicationIdSuffix ""
+        } else {
+            throw new GradleException("unknown flavor" + dartEnvironmentVariables.FLAVOR + "has passed")
+        }
     }
 
     buildTypes {
