@@ -42,6 +42,10 @@ dev_dependencies:
   # Retrofit-dev
   retrofit_generator: ^4.0.1
 
+  # Mock
+  mockito: ^5.2.0
+  mock_web_server: ^4.1.1
+
   #Pub.devのパッケージがうまく動かないのでGitHubから得る 
   flutter_launcher_icons:
     git:
