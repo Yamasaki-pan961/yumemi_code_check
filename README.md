@@ -28,13 +28,13 @@ SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定�
 
 ### dev
 - BuildMode: debug
-- Repository: 
+- Repository: Mock
 ### stg
 - BuildMode: profile
-- Repository:
+- Repository: GitHub API
 ### prd
 - BuildMode: release
-- Repository:
+- Repository: GitHub API
 ## 参考リポジトリー
 https://github.com/wasabeef/flutter-architecture-blueprints
 
