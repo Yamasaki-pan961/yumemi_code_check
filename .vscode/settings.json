@@ -1,11 +1,16 @@
 {
   "cSpell.ignorePaths": [
-    "l10n**.dart"
+    "l10n**.dart",
+    "generated/"
   ],
   "cSpell.enabledLanguageIds": [
     "markdown",
     "yaml",
     "dart",
     "json"
+  ],
+  "cSpell.words": [
+    "mockito",
+    "yumemi"
   ],
 }
