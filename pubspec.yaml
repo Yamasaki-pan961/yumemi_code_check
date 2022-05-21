@@ -21,6 +21,7 @@ dependencies:
 
   # Model
   freezed_annotation: ^2.0.3
+  json_annotation: ^4.5.0
 
   # Http
   retrofit: ^3.0.1+1
