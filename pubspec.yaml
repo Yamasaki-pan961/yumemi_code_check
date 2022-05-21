@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   
-  # Uitilty
+  # Utility
   quiver: ^3.1.0
 
   # Localization
@@ -19,13 +19,23 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
 
+  # Model
+  freezed_annotation: ^2.0.3
+  json_annotation: ^4.5.0
+  
   cupertino_icons: ^1.0.2
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner: ^2.1.11
   
+  # Model-dev
+  freezed: ^2.0.3+1
+  json_serializable: ^6.2.0
+
   #Pub.devのパッケージがうまく動かないのでGitHubから得る 
   flutter_launcher_icons:
     git:
