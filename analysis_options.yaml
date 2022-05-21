@@ -27,3 +27,14 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore
+    flutter_style_todos: ignore
+    todo: ignore
+    directives_ordering: ignore
+    sort_pub_dependencies: ignore
