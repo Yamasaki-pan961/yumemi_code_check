@@ -1,2 +1,2 @@
-const baseUrl = 'https://api.github.com';
-const searchRepositoriesUrl = '/search/repositories';
+const githubApiBaseUrl = 'https://api.github.com';
+const githubSearchRepositoriesUrl = '/search/repositories';
