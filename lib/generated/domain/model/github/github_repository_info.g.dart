@@ -11,7 +11,7 @@ _$_GithubRepositoryInfo _$$_GithubRepositoryInfoFromJson(
     _$_GithubRepositoryInfo(
       name: json['full_name'] as String,
       owner: Owner.fromJson(json['owner'] as Map<String, dynamic>),
-      language: json['language'] as String,
+      language: json['language'] as String?,
       stargazersCount: json['stargazers_count'] as int,
       watchersCount: json['watchers_count'] as int,
       forksCount: json['forks_count'] as int,

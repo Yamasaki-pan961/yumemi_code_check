@@ -25,7 +25,7 @@ mixin _$GithubRepositoryInfo {
   @JsonKey(name: 'owner')
   Owner get owner => throw _privateConstructorUsedError;
   @JsonKey(name: 'language')
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   @JsonKey(name: 'stargazers_count')
   int get stargazersCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'watchers_count')
@@ -49,7 +49,7 @@ abstract class $GithubRepositoryInfoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'full_name') String name,
       @JsonKey(name: 'owner') Owner owner,
-      @JsonKey(name: 'language') String language,
+      @JsonKey(name: 'language') String? language,
       @JsonKey(name: 'stargazers_count') int stargazersCount,
       @JsonKey(name: 'watchers_count') int watchersCount,
       @JsonKey(name: 'forks_count') int forksCount,
@@ -89,7 +89,7 @@ class _$GithubRepositoryInfoCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -127,7 +127,7 @@ abstract class _$$_GithubRepositoryInfoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'full_name') String name,
       @JsonKey(name: 'owner') Owner owner,
-      @JsonKey(name: 'language') String language,
+      @JsonKey(name: 'language') String? language,
       @JsonKey(name: 'stargazers_count') int stargazersCount,
       @JsonKey(name: 'watchers_count') int watchersCount,
       @JsonKey(name: 'forks_count') int forksCount,
@@ -170,7 +170,7 @@ class __$$_GithubRepositoryInfoCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -214,7 +214,7 @@ class _$_GithubRepositoryInfo implements _GithubRepositoryInfo {
   final Owner owner;
   @override
   @JsonKey(name: 'language')
-  final String language;
+  final String? language;
   @override
   @JsonKey(name: 'stargazers_count')
   final int stargazersCount;
@@ -282,7 +282,7 @@ abstract class _GithubRepositoryInfo implements GithubRepositoryInfo {
       @JsonKey(name: 'owner')
           required final Owner owner,
       @JsonKey(name: 'language')
-          required final String language,
+          required final String? language,
       @JsonKey(name: 'stargazers_count')
           required final int stargazersCount,
       @JsonKey(name: 'watchers_count')
@@ -303,7 +303,7 @@ abstract class _GithubRepositoryInfo implements GithubRepositoryInfo {
   Owner get owner => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'language')
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'stargazers_count')
   int get stargazersCount => throw _privateConstructorUsedError;

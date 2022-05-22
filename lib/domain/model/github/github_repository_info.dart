@@ -9,7 +9,7 @@ class GithubRepositoryInfo with _$GithubRepositoryInfo {
   const factory GithubRepositoryInfo({
     @JsonKey(name: 'full_name') required String name,
     @JsonKey(name: 'owner') required Owner owner,
-    @JsonKey(name: 'language') required String language,
+    @JsonKey(name: 'language') required String? language,
     @JsonKey(name: 'stargazers_count') required int stargazersCount,
     @JsonKey(name: 'watchers_count') required int watchersCount,
     @JsonKey(name: 'forks_count') required int forksCount,
