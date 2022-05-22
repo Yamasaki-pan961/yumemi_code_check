@@ -170,7 +170,7 @@ packages:
     source: hosted
     version: "2.2.3"
   dio:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dio
       url: "https://pub.dartlang.org"
@@ -263,6 +263,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  http_mock_adapter:
+    dependency: "direct main"
+    description:
+      name: http_mock_adapter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2"
   http_multi_server:
     dependency: transitive
     description:
@@ -361,13 +368,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  mock_web_server:
-    dependency: "direct dev"
-    description:
-      name: mock_web_server
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.1.1"
   mockito:
     dependency: "direct dev"
     description:
