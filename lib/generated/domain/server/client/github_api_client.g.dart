@@ -8,8 +8,8 @@ part of '../../../../domain/server/client/github_api_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-class _RestClient implements RestClient {
-  _RestClient(this._dio, {this.baseUrl}) {
+class _GithubApiClient implements GithubApiClient {
+  _GithubApiClient(this._dio, {this.baseUrl}) {
     baseUrl ??= 'https://api.github.com';
   }
 
