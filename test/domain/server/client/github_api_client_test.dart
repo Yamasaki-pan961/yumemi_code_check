@@ -25,9 +25,9 @@ void main() {
         path: githubSearchRepositoriesUrl,
         responseMap: mockSearchStatusResponse,
         statusFunction: {
-          200: () async {
-            final response = await githubApiClient.searchRepositories('aa');
-            expect(response, responseFromJson);
+          200: () {
+            expect(githubApiClient.searchRepositories('aa'),
+                completion(responseFromJson),);
           },
         },
       );
