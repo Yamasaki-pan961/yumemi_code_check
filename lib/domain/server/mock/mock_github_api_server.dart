@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:yumemi_code_check/domain/server/client/github_api_path.dart';
 

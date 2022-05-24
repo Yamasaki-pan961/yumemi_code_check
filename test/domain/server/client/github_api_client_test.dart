@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yumemi_code_check/domain/model/github/search_repository_response.dart';

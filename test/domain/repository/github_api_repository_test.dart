@@ -1,14 +1,8 @@
-import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
-import 'dart:ffi';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yumemi_code_check/domain/model/github/search_repository_response.dart';
-import 'package:yumemi_code_check/domain/model/result.dart';
 import 'package:yumemi_code_check/domain/repository/github/github_api_repository.dart';
 import 'package:yumemi_code_check/domain/repository/github/github_api_repository_impl.dart';
 import 'package:yumemi_code_check/domain/server/client/github_api_client.dart';
@@ -16,7 +10,7 @@ import 'package:yumemi_code_check/domain/server/client/github_api_path.dart';
 import 'package:yumemi_code_check/domain/server/mock/mock_github_api_server.dart';
 import 'package:yumemi_code_check/domain/server/mock/search_repository_json.dart';
 
-void main() async {
+void main() {
   late GithubApiClient githubApiClient;
   late MockGithubApiServer mockServer;
   late GithubApiRepository repository;
