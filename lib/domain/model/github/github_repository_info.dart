@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'owner.dart';
+import 'package:yumemi_code_check/domain/model/github/owner.dart';
 
 part '../../../generated/domain/model/github/github_repository_info.freezed.dart';
 part '../../../generated/domain/model/github/github_repository_info.g.dart';
