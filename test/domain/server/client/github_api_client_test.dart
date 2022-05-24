@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yumemi_code_check/domain/model/github/search_repository_response.dart';
@@ -16,21 +17,23 @@ void main() {
       SearchRepositoryResponse.fromJson(json);
     });
 
-    test('MockサーバでのGetテスト', () {
+    test('MockサーバでのGetテスト', () async {
       final mockServer = MockGithubApiServer();
       githubApiClient = GithubApiClient(mockServer.dio);
       final responseFromJson = SearchRepositoryResponse.fromJson(json);
 
-      mockServer.onGetSuccessStatuses(
+      await mockServer.onGetSuccessStatuses(
         path: githubSearchRepositoriesUrl,
         responseMap: mockSearchStatusResponse,
         statusFunction: {
-          200: () {
-            expect(
-              githubApiClient.searchRepositories('aa'),
-              completion(responseFromJson),
-            );
-          },
+          200: Future(
+            () async {
+              expect(
+                await githubApiClient.searchRepositories('aa'),
+                responseFromJson,
+              );
+            },
+          )
         },
       );
     });
