@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../generated/domain/model/github/owner.freezed.dart';
 part '../../../generated/domain/model/github/owner.g.dart';
 
+/// Repositoryのownerを扱うデータクラス
 @freezed
 class Owner with _$Owner {
   const factory Owner({

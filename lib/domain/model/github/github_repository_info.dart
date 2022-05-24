@@ -4,6 +4,7 @@ import 'owner.dart';
 part '../../../generated/domain/model/github/github_repository_info.freezed.dart';
 part '../../../generated/domain/model/github/github_repository_info.g.dart';
 
+/// GithubのRepositoryの情報を表すデータクラス
 @freezed
 class GithubRepositoryInfo with _$GithubRepositoryInfo {
   const factory GithubRepositoryInfo({
