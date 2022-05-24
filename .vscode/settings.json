@@ -1,7 +1,8 @@
 {
   "cSpell.ignorePaths": [
     "l10n**.dart",
-    "generated/"
+    "generated/",
+    "**json.dart"
   ],
   "cSpell.enabledLanguageIds": [
     "markdown",
