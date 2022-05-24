@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'l10n_en.dart';
+import 'l10n_ja.dart';
 
 /// Callers can lookup localized strings with an instance of L10n returned
 /// by `L10n.of(context)`.
@@ -89,9 +90,51 @@ abstract class L10n {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en')
+    Locale('en'),
+    Locale('ja')
   ];
 
+  /// No description provided for @title.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub Repository Search'**
+  String get title;
+
+  /// No description provided for @blankMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Input required'**
+  String get blankMessage;
+
+  /// No description provided for @limitExceed.
+  ///
+  /// In en, this message translates to:
+  /// **'Input limit reached'**
+  String get limitExceed;
+
+  /// No description provided for @inputKeyword.
+  ///
+  /// In en, this message translates to:
+  /// **'Input keyword'**
+  String get inputKeyword;
+
+  /// No description provided for @serverError.
+  ///
+  /// In en, this message translates to:
+  /// **'The server error has occurred.'**
+  String get serverError;
+
+  /// No description provided for @networkError.
+  ///
+  /// In en, this message translates to:
+  /// **'The Internet error has occurred.'**
+  String get networkError;
+
+  /// No description provided for @unknownError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown error has occurred.'**
+  String get unknownError;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
@@ -103,7 +146,7 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ja'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_L10nDelegate old) => false;
@@ -115,6 +158,7 @@ L10n lookupL10n(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return L10nEn();
+    case 'ja': return L10nJa();
   }
 
   throw FlutterError(
