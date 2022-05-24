@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:yumemi_code_check/ui/page/search_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -7,11 +9,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SearchRepositoryApp',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(),
+      theme: ThemeData.light().copyWith(
+        textTheme: GoogleFonts.notoSansTextTheme(),
       ),
+      darkTheme: ThemeData.dark(),
+      home: const SearchPage(),
     );
   }
 }
