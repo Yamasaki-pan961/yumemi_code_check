@@ -21,10 +21,12 @@ dependencies:
 
   # Model
   freezed_annotation: ^2.0.3
+  json_annotation: ^4.5.0
 
   # Http
   retrofit: ^3.0.1+1
-  
+  dio: ^4.0.6
+  http_mock_adapter: ^0.3.2
   cupertino_icons: ^1.0.2
 
 
@@ -44,7 +46,6 @@ dev_dependencies:
 
   # Mock
   mockito: ^5.2.0
-  mock_web_server: ^4.1.1
 
   #Pub.devのパッケージがうまく動かないのでGitHubから得る 
   flutter_launcher_icons:
