@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yumemi_code_check/l10n/l10n.dart';
 import 'package:yumemi_code_check/ui/page/search_page.dart';
 
 class App extends StatelessWidget {
@@ -14,6 +15,8 @@ class App extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       home: const SearchPage(),
+      localizationsDelegates: L10n.localizationsDelegates,
+      supportedLocales: L10n.supportedLocales,
     );
   }
 }
