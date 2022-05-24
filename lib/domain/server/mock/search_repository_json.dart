@@ -1,3 +1,25 @@
+import 'dart:convert';
+
+final mockSearchStatusResponse = <int, Map<String, dynamic>>{
+  200: jsonDecode(searchRepositoryJson) as Map<String, dynamic>,
+  422: jsonDecode(
+    '''
+{
+    "message": "Validation Failed",
+    "errors": [
+        {
+            "resource": "Search",
+            "field": "q",
+            "code": "missing"
+        }
+    ],
+    "documentation_url": "https://docs.github.com/v3/search"
+}
+''',
+  ) as Map<String, dynamic>,
+  503: <String, dynamic>{'message': 'Server Error'}
+};
+
 const String searchRepositoryJson = '''
 {
   "total_count": 182901,
