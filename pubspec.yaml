@@ -47,6 +47,9 @@ dev_dependencies:
   # Mock
   mockito: ^5.2.0
 
+  # analyses
+  pedantic_mono: any
+
   #Pub.devのパッケージがうまく動かないのでGitHubから得る 
   flutter_launcher_icons:
     git:
