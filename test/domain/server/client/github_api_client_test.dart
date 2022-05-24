@@ -12,7 +12,7 @@ void main() {
   final json = jsonDecode(searchRepositoryJson) as Map<String, dynamic>;
 
   group('Github Api Client', () {
-    test('モデルのパーステスト', () async {
+    test('モデルのパーステスト', () {
       SearchRepositoryResponse.fromJson(json);
     });
 
