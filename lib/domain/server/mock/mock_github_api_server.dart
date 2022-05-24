@@ -118,7 +118,4 @@ class MockGithubApiServer {
         ),
         data: Matchers.any,
       );
-
-  void close() => _dioAdapter.close();
-  void reset() => _dioAdapter.reset();
 }
