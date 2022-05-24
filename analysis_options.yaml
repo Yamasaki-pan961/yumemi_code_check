@@ -20,3 +20,4 @@ analyzer:
     todo: ignore
     directives_ordering: ignore
     sort_pub_dependencies: ignore
+    lines_longer_than_80_chars: ignore

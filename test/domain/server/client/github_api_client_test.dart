@@ -12,23 +12,27 @@ void main() {
   final json = jsonDecode(searchRepositoryJson) as Map<String, dynamic>;
 
   group('Github Api Client', () {
-    test('モデルのパーステスト', () async {
+    test('モデルのパーステスト', () {
       SearchRepositoryResponse.fromJson(json);
     });
 
-    test('MockサーバでのGetテスト', () {
+    test('MockサーバでのGetテスト', () async {
       final mockServer = MockGithubApiServer();
       githubApiClient = GithubApiClient(mockServer.dio);
       final responseFromJson = SearchRepositoryResponse.fromJson(json);
 
-      mockServer.onGetSuccessStatuses(
+      await mockServer.onGetSuccessStatuses(
         path: githubSearchRepositoriesUrl,
         responseMap: mockSearchStatusResponse,
         statusFunction: {
-          200: () async {
-            final response = await githubApiClient.searchRepositories('aa');
-            expect(response, responseFromJson);
-          },
+          200: Future(
+            () async {
+              expect(
+                await githubApiClient.searchRepositories('aa'),
+                responseFromJson,
+              );
+            },
+          )
         },
       );
     });
