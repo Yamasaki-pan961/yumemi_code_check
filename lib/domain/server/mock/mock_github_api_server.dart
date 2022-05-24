@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
@@ -27,28 +29,28 @@ class MockGithubApiServer {
   /// 例:
   /// ```dart
   /// responseMap = {200: json200,404: json404}
-  /// statusFunction = {200: function200, 500: function500}
+  /// statusFunction = {200: Future(()async{}), 500: Future(()async{})}
   /// // 200のみ動作する
   /// ```
   ///
-  void onGetSuccessStatuses({
+  Future<void> onGetSuccessStatuses({
     required String path,
     required Map<int, Map<String, dynamic>> responseMap,
-    required Map<int, VoidCallback> statusFunction,
-  }) {
-    statusFunction.forEach((status, function) {
+    required Map<int, Future<void>> statusFunction,
+  }) async {
+    for (final status in statusFunction.keys) {
       if (responseMap.containsKey(status)) {
         _dioAdapter.onGet(
           path,
           (server) => server.reply(status, responseMap[status]),
           data: Matchers.any,
         );
-        function();
+        await statusFunction[status]!;
       }
-    });
+    }
   }
 
-  /// ステータスコードごとにAPIリクエストをTestをする関数（すべてエラー扱い）
+  /// ステータスコードごとにAPIリクエストをTestをする関数（すべてDioError）
   ///
   /// [responseMap]と[statusFunction]のkeyはレスポンスのStatusCode\
   /// [responseMap]と[statusFunction]に同一のStatusCodeが存在するに動作する
@@ -56,16 +58,16 @@ class MockGithubApiServer {
   /// 例:
   /// ```dart
   /// responseMap = {200: json200,404: json404}
-  /// statusFunction = {200: function200, 500: function500}
+  /// statusFunction = {200: Future(()async{}), 500: Future(()async{}}
   /// // 200のみ動作する
   /// ```
   ///
-  void onGetFailureStatus({
+  Future<void> onGetFailureStatus({
     required String path,
     required Map<int, Map<String, dynamic>> responseMap,
-    required Map<int, VoidCallback> statusFunction,
-  }) {
-    statusFunction.forEach((status, function) {
+    required Map<int, Future<void>> statusFunction,
+  }) async {
+    for (final status in statusFunction.keys) {
       if (responseMap.containsKey(status)) {
         _dioAdapter.onGet(
           path,
@@ -85,9 +87,9 @@ class MockGithubApiServer {
           ),
           data: Matchers.any,
         );
-        function();
+        await statusFunction[status]!;
       }
-    });
+    }
   }
 
   /// 成功レスポンスを設定する関数
