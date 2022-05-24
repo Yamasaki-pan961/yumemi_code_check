@@ -26,8 +26,10 @@ void main() {
         responseMap: mockSearchStatusResponse,
         statusFunction: {
           200: () {
-            expect(githubApiClient.searchRepositories('aa'),
-                completion(responseFromJson),);
+            expect(
+              githubApiClient.searchRepositories('aa'),
+              completion(responseFromJson),
+            );
           },
         },
       );
