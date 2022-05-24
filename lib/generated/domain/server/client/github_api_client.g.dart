@@ -21,7 +21,10 @@ class _GithubApiClient implements GithubApiClient {
   Future<SearchRepositoryResponse> searchRepositories(searchKeyword) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'q': searchKeyword};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      r'accept': 'application/vnd.github.v3+json'
+    };
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<SearchRepositoryResponse>(
