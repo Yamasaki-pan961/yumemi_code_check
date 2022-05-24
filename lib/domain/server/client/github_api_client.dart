@@ -5,6 +5,7 @@ import '../../model/github/search_repository_response.dart';
 
 part '../../../generated/domain/server/client/github_api_client.g.dart';
 
+/// Retrofitを使ったGithub API Client
 @RestApi(baseUrl: githubApiBaseUrl)
 abstract class GithubApiClient {
   factory GithubApiClient(dio.Dio dio, {String baseUrl}) = _GithubApiClient;
