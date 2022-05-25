@@ -3,6 +3,24 @@
 Flutter 2.10.5
   - Flutter 3 が5月12日にが登場しましたが不具合がいくつか報告されているので、今回は使用を見送った。
   - dart 2.17使ってみたかった
+
+## スクリーンショット
+
+縦画面
+| 一覧表示 | 詳細表示 |
+| -- | -- |
+| ![image](https://user-images.githubusercontent.com/54800851/170254480-7cfd2569-f6c6-4e92-9330-e93b478ca0bf.png) | ![image](https://user-images.githubusercontent.com/54800851/170254524-826be7ab-e8c6-4595-ba0a-1c9e9fb1c09b.png) |
+
+横画面
+|  |  |
+| -- | -- |
+| 一覧表示 | ![image](https://user-images.githubusercontent.com/54800851/170254649-766c8701-6eed-4897-b3c7-28c8f13494bd.png) |
+| 詳細表示 |![image](https://user-images.githubusercontent.com/54800851/170254697-034000d9-db42-48ab-b319-928476c9b019.png) |
+
+
+
+
+
 ## 環境設定
 
 本プロジェクトでは`fvm: Flutter Version Management`を使用してSDKのバージョンを管理しています。
