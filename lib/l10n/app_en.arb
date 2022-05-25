@@ -1,3 +1,11 @@
 {
-  "@@locale": "en"
+  "@@locale": "en",
+  "title": "GitHub Repository Search",
+  "blankMessage": "Input required",
+  "limitExceed": "Input limit reached",
+  "inputKeyword": "Input keyword",
+  "serverError": "The server error has occurred.",
+  "networkError": "The Internet error has occurred.",
+  "unknownError": "Unknown error has occurred.",
+  "search": "Search"
 }

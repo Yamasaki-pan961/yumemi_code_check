@@ -11,8 +11,10 @@
     "json"
   ],
   "cSpell.words": [
+    "LTRB",
     "mockito",
     "noto",
+    "riverpod",
     "yumemi"
   ],
 }

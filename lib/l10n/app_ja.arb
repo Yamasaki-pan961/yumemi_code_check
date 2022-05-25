@@ -1,0 +1,11 @@
+{
+  "@@locale": "ja",
+  "title": "GitHubリポジトリ検索",
+  "blankMessage": "入力が必要です",
+  "limitExceed": "入力上限に達しました",
+  "inputKeyword": "キーワード入力",
+  "serverError": "サーバーエラーが発生しています",
+  "networkError": "インターネットエラーが発生しています",
+  "unknownError": "不明なエラーが発生しています",
+  "search": "検索"
+}
