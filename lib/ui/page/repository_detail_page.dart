@@ -19,20 +19,23 @@ class RepositoryDetailPage extends StatelessWidget {
           children: [
             Column(
               children: [
-                SizedBox(
-                  height: 250,
-                  width: 250,
-                  child: Container(
-                    color: Theme.of(context).inputDecorationTheme.fillColor,
-                    child: Image.network(
-                      info.owner.avatarUrl,
-                      errorBuilder: (context, error, st) => Stack(
-                        alignment: AlignmentDirectional.center,
-                        children: const [
-                          Text(
-                            'Image Load Error',
-                          )
-                        ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 48, 0, 16),
+                  child: SizedBox(
+                    height: 250,
+                    width: 250,
+                    child: Container(
+                      color: Theme.of(context).inputDecorationTheme.fillColor,
+                      child: Image.network(
+                        info.owner.avatarUrl,
+                        errorBuilder: (context, error, st) => Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: const [
+                            Text(
+                              'Image Load Error',
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
