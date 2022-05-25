@@ -43,6 +43,20 @@ SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定�
 ## 参考リポジトリー
 https://github.com/wasabeef/flutter-architecture-blueprints
 
+## 反省点
+- ### HttpClientに依存しないエラー表示を実装したかった
+現在はDioErrorを使ってエラーハンドリングしているが、HttpClientが変わってもUIに影響が出ないようにラップしたかった。
+Error
+- ### リポジトリ検索画面のScroll範囲が狭まっている
+Paddingのせいで狭まっているので気を付ける
+
+- ### HttpClientとRepositoryの責務に悩んだ
+RetrofitがDataModelを返してくれるからリポジトリーの仕事はなんだろうと悩んだ。結果として、HttpClientが何回も呼び出される複雑なデータ要求があった場合を考え、とりあえず分けておいた。
+
+- ### テストを正しくかけているか
+カバレッジを計算させてないから
+
+上げたらきりがない…
 ## Getting Started
 
 This project is a starting point for a Flutter application.
