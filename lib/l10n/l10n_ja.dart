@@ -27,4 +27,7 @@ class L10nJa extends L10n {
 
   @override
   String get unknownError => '不明なエラーが発生しています';
+
+  @override
+  String get search => '検索';
 }

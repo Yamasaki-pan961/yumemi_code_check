@@ -6,5 +6,6 @@
   "inputKeyword": "Input keyword",
   "serverError": "The server error has occurred.",
   "networkError": "The Internet error has occurred.",
-  "unknownError": "Unknown error has occurred."
+  "unknownError": "Unknown error has occurred.",
+  "search": "Search"
 }

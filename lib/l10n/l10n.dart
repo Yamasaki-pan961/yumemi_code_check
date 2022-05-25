@@ -135,6 +135,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Unknown error has occurred.'**
   String get unknownError;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

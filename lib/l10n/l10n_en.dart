@@ -27,4 +27,7 @@ class L10nEn extends L10n {
 
   @override
   String get unknownError => 'Unknown error has occurred.';
+
+  @override
+  String get search => 'Search';
 }
