@@ -10,13 +10,27 @@ class SearchSuccess extends StatelessWidget {
   List<GithubRepositoryInfo> get items => success.value.items;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(items[index].name),
-        );
-      },
-      itemCount: items.length,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            Text(
+              '${success.value.totalCount}HIT',
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    subtitle: Text(items[index].name),
+                  );
+                },
+                itemCount: items.length,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
