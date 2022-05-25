@@ -37,6 +37,7 @@ class SearchPage extends HookConsumerWidget {
               child: TextFormField(
                 onSaved: (value) async {
                   if (value != null) {
+                    resultState.value = null;
                     loadingState.value = true;
                     resultState.value = await ref
                         .watch(githubApiRepositoryProvider)
