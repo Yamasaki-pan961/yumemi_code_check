@@ -19,7 +19,7 @@ class SearchFailure extends StatelessWidget {
           message = L10n.of(context)!.serverError;
         }
       }
-      if (error is SocketException) {
+      if (error.error is SocketException) {
         message = L10n.of(context)!.networkError;
       }
     }
