@@ -1,5 +1,8 @@
 # yumemi_code_check
-
+## バージョン
+Flutter 2.10.5
+  - Flutter 3 が5月12日にが登場しましたが不具合がいくつか報告されているので、今回は使用を見送った。
+  - dart 2.17使ってみたかった
 ## 環境設定
 
 本プロジェクトでは`fvm: Flutter Version Management`を使用してSDKのバージョンを管理しています。
@@ -31,7 +34,9 @@ SDKのバージョンは[`.fvm/fvm_config.json`](.fvm/fvm_config.json)で指定�
 - Repository: Mock
 ### stg
 - BuildMode: profile
+  - debugModeのほうが良いと後で気づいた
 - Repository: GitHub API
+
 ### prd
 - BuildMode: release
 - Repository: GitHub API
