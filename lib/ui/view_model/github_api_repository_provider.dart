@@ -7,9 +7,9 @@ import 'package:yumemi_code_check/domain/server/mock/mock_github_api_server.dart
 import 'package:yumemi_code_check/domain/server/mock/search_repository_json.dart';
 
 final flavorProvider =
-    Provider.autoDispose((ref) => const String.fromEnvironment('FLAVOR'));
+    Provider((ref) => const String.fromEnvironment('FLAVOR'));
 
-final mockServerProvider = Provider.autoDispose((ref) {
+final mockServerProvider = Provider((ref) {
   final flavor = ref.watch(flavorProvider);
   if (flavor == 'dev') {
     final mock = MockGithubApiServer()
@@ -23,8 +23,7 @@ final mockServerProvider = Provider.autoDispose((ref) {
   return null;
 });
 
-final githubApiRepositoryProvider =
-    Provider.autoDispose<GithubApiRepository>((ref) {
+final githubApiRepositoryProvider = Provider<GithubApiRepository>((ref) {
   final mock = ref.watch(mockServerProvider);
   if (mock != null) {
     return GithubApiRepositoryImpl(GithubApiClient(mock.dio));
