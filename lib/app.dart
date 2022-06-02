@@ -28,7 +28,7 @@ class App extends StatelessWidget {
         inputDecorationTheme:
             darkDeco.copyWith(fillColor: Colors.grey.shade700),
       ),
-      home: const SearchPage(),
+      home: SearchPage(),
       localizationsDelegates: L10n.localizationsDelegates,
       supportedLocales: L10n.supportedLocales,
     );
