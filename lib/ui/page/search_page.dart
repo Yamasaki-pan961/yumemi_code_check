@@ -67,6 +67,7 @@ class SearchPage extends HookConsumerWidget {
                   border: const OutlineInputBorder(),
                   filled: true,
                 ),
+                textInputAction: TextInputAction.search,
               ),
             ),
           ),
