@@ -17,4 +17,6 @@
     "riverpod",
     "yumemi"
   ],
+  "dart.sdkPath": ".fvm/flutter_sdk",
+  "dart.flutterSdkPath": ".fvm/flutter_sdk"
 }
