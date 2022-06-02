@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yumemi_code_check/domain/model/github/github_repository_info.dart';
 import 'package:yumemi_code_check/domain/model/github/search_repository_response.dart';
 import 'package:yumemi_code_check/domain/model/result.dart';
 import 'package:yumemi_code_check/ui/page/repository_detail_page.dart';
