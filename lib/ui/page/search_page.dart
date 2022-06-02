@@ -10,13 +10,13 @@ import 'package:yumemi_code_check/ui/widget/search_failure.dart';
 import 'package:yumemi_code_check/ui/widget/search_success.dart';
 
 class SearchPage extends HookConsumerWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  SearchPage({Key? key}) : super(key: key);
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final loadingState = useState(false);
     final resultState = useState<Result<SearchRepositoryResponse>?>(null);
-    final formKey = GlobalKey<FormState>();
 
     void onSubmit() {
       if (formKey.currentState!.validate()) {
