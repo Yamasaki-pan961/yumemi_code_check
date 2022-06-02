@@ -8,9 +8,10 @@ class SearchSuccess extends StatelessWidget {
   const SearchSuccess({Key? key, required this.success}) : super(key: key);
   final Success<SearchRepositoryResponse> success;
 
-  List<GithubRepositoryInfo> get items => success.value.items;
   @override
   Widget build(BuildContext context) {
+    final items = success.value.items;
+    
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
